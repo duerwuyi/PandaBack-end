@@ -1,4 +1,4 @@
-from random import Random  # 用于生成随机码
+import random
 from django.core.mail import send_mail  # 发送邮件模块
 from account_management.models import EmailVerifyRecord  # 邮箱验证model
 from django.conf import settings    # setting.py添加的的配置信息
@@ -7,19 +7,20 @@ import datetime
 
 
 # 生成随机字符串
-def random_str(randomlength=8):
+def random_str(random_length=8):
     """
     随机字符串
     :param randomlength: 字符串长度
     :return: String 类型字符串
     """
-    str = ''
-    chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
-    length = len(chars) - 1
-    random = Random()
-    for i in range(randomlength):
-        str += chars[random.randint(0, length)]
-    return str
+    if not isinstance(random_length, int):
+        raise TypeError(f"random_length should not be a {}")
+    CHAR_POOL = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
+    result = ''
+    while random_length:
+        random_length -= 1
+        result += random.choice(CHAR_POOL)
+    return result
 
 
 # 发送电子邮件
