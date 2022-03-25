@@ -25,10 +25,11 @@ urlpatterns = [
     path('login/', account_management_views.login, name='login'),
     path('index/', account_management_views.index, name='index'),
     path('logout/', account_management_views.logout, name='logout'),
-    path('learn/', course_views.GetLearnModel.as_view()),
-    path('discover/', course_views.GetDiscoverModel.as_view()),
-    path('start_page/', course_views.GetStartPageModel.as_view()),
-    path('video_player/', course_views.GetVideoPlayerModel.as_view()),
+    path('learn/', course_views.GetLearnModel.as_view(), name='learn'),
+    path('discover/', course_views.GetDiscoverModel.as_view(), name='discover'),
+    path('start_page/', course_views.GetStartPageModel.as_view(), name='start_page'),
+    path('video_player/', course_views.GetVideoPlayerModel.as_view(), 'player'),
+    path('/', account_management_views.login, name='default')
     #
     # path('test1/', views2.Test.as_view())
 ]
