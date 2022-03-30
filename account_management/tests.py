@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .email_send import random_str
+from views import LoginForm
 
 
 # Create your tests here.
@@ -21,3 +22,7 @@ class RandomStrTest(TestCase):
     def test_illegal_input(self):
         with self.assertRaises(TypeError, msg="Good"):
             string = random_str('a')
+
+class LoginFormTest(TestCase):
+    def setUp(self):
+        self.login_form = LoginForm()

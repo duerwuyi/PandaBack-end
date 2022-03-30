@@ -29,7 +29,7 @@ urlpatterns = [
     path('discover/', course_views.GetDiscoverModel.as_view(), name='discover'),
     path('start_page/', course_views.GetStartPageModel.as_view(), name='start_page'),
     path('video_player/', course_views.GetVideoPlayerModel.as_view(), 'player'),
-    path('/', account_management_views.login, name='default')
+    path('', account_management_views.login, name='default')
     #
     # path('test1/', views2.Test.as_view())
 ]
