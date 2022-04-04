@@ -7,9 +7,9 @@ from django.db import models
 
 
 class HelloModel():
-    def __init__(self, str="", id=0):
-        self.str = str
-        self.id = id
+    def __init__(self, str_="", id_=0):
+        self.str = str_
+        self.id = id_
 
     def __repr__(self):
         return {
