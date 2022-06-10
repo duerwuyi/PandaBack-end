@@ -10,3 +10,5 @@ $ python manage.py runserver 0.0.0.0:8000
 ...
 Starting development server at http://0.0.0.0:8000/
 ```
+
+出于各种原因，新仓库移至： https://github.com/foliet/panda-backend
